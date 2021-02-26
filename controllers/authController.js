@@ -12,6 +12,7 @@ const INTERNAL_SERVER_ERROR	= 500;			// The server encountered an unexpected con
 module.exports = {
 	createNewUser: function(req, res) {
 		const userToCreate = {
+			userName: req.body.userName,
 			email: req.body.email,
 		}
 		bcrypt.hash(req.body.password, NUM_SALT_ROUNDS, (err, hashedPassword) => {
